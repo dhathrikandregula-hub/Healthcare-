@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Healthcare App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f3f3f3;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: #fff;
+            border-radius: 8px;
+            margin: 10px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>🤖 AI Healthcare Assistant</h2>
+
+    <div class="container">
+        <h3>Health Symptom Checker</h3>
+        <input id="symptom" placeholder="Enter your symptoms..." style="padding:10px;width:80%;">
+        <br><br>
+        <button onclick="check()">Check</button>
+        <p id="result"></p>
+    </div>
+
+<script>
+function check() {
+    let s = document.getElementById("symptom").value.toLowerCase();
+
+    if (s.includes("fever")) {
+        document.getElementById("result").innerHTML = "You may have a viral infection. Drink water & rest.";
+    } else if (s.includes("headache")) {
+        document.getElementById("result").innerHTML = "Mild headache. Try hydration. If severe → consult doctor.";
+    } else {
+        document.getElementById("result").innerHTML = "Symptom not recognized. Please consult a doctor.";
+    }
+}
+</script>
+
+</body>
+</html>
